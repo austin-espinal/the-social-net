@@ -72,7 +72,7 @@ const thoughtController = {
                                         res.status(404).json({ message: 'No User found with this id!' })
                                         return;
                                 }
-                                res.json(dbThoughtData);
+                                res.json({ message: 'Thought updated' });
                         })
                         .catch(err => res.status(400).json(err));
         },
@@ -113,7 +113,7 @@ const thoughtController = {
                                         res.status(404).json({ message: 'No Thought found with this id!' });
                                         return;
                                 }
-                                res.json(dbThoughtData);
+                                res.json({ message: 'Reaction added successfully' });
                         })
                         .catch(err => res.json(err));
         },
