@@ -68,6 +68,11 @@ USE localhost:3001/api/users/userId/friends/friendId
 Reactions:
 USE localhost:3001/api/thoughts/thoughtId/reactions
 -POST AddReaction: it will add a reaction to a thought.
+example {
+	        "reactionBody": "Oh wow that's amazing",
+	        "username": "sargentino"
+        }
+USE localhost:3001/api/thoughts/thoughtId/reactions/reactionId
 -Delete RemoveReaction: it will remove a reaction from a thought.
 
 ## Contributing

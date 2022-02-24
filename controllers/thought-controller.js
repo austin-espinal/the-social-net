@@ -6,6 +6,7 @@ const thoughtController = {
         // GET all thoughts
         getAllThoughts(req, res) {
                 Thought.find({})
+                        .select('-__v')
                         .then(dbThoughtData => res.json(dbThoughtData))
                         .catch(err => {
                                 console.log(err);
@@ -49,6 +50,7 @@ const thoughtController = {
                                 path: 'reactions',
                                 select: '-__v'
                         })
+                        .select('-__v')
                         .then(dbThoughtData => {
                                 if (!dbThoughtData) {
                                         res.status(404).json({ message: 'No Thought found with this id!' });
@@ -83,8 +85,8 @@ const thoughtController = {
                                         return res.status(404).json({ message: 'No Thought with this id!' });
                                 }
                                 return User.findOneAndUpdate(
-                                        { _id: params.userId },
-                                        { $pull: { comments: params.thoughtId } },
+                                        { username: deletedThought.username },
+                                        { $pull: { thoughts: params.id } },
                                         { new: true }
                                 );
                         })
@@ -116,11 +118,13 @@ const thoughtController = {
                         .catch(err => res.json(err));
         },
 
+        // /api/thoughts/:id/reactions/reactionId
+
         //DELETE a reaction by reactionId
         removeReaction({ params }, res) {
                 Thought.findOneAndUpdate(
                         { _id: params.id },
-                        { $pull: { reactions: { reactionId: params.reactionId } } },
+                        { $pull: { reactions: { _id: params.reactionId } } },
                         { new: true }
                 )
                         .then(dbThoughtData => {
