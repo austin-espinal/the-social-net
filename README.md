@@ -26,8 +26,8 @@ After downloading and extracting the project from the zip, open the terminal and
 
 ## Usage 
 
-[Showcase video Part 1](https://drive.google.com/file/d/1SQ5IIANf9i13U2hNjOq2xKBvzw5X25bH/view)
-[Showcase video Part 2](https://drive.google.com/file/d/1aTMj0Xy9OOVR310ImXf3J-P6Weuo0DBk/view)
+[Showcase video Part 1](https://drive.google.com/file/d/1KyiJeQIT-C5DF6DJWrXuhtEsy9xjlxEE/view)
+[Showcase video Part 2](https://drive.google.com/file/d/1vnGOzTjs1A8aVyZp5BzqHLOPipMXpdz8/view)
 The links above is are to the application direction/showcase videos
 
 Start the server by typing "npm start". Then use Insomnia to try the each of the routes.
